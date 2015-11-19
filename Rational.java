@@ -1,7 +1,7 @@
-// Team LiveLAN - Dylan Wright, Advay Sriram
+// Team 42 - Dylan Wright, Mei Huang
 // APCS1 pd5
-// HW32 -- Irrationality Stops Here
-// 2015-11-17
+// HW33 -- Irrationality Stops Here
+// 2015-11-18
 
 public class Rational {
     
