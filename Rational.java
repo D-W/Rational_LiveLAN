@@ -69,11 +69,37 @@ public class Rational {
 	    this.numerator /= gcd();
 	    this.denominator /= gcd();
 	}
+	public static int gcdS(int a, int b) { 
+	    int c = 0; 
+	    if (a < b) { 
+	        a = c; 
+	        a = b; 
+	        b = c;
+	    }
+	    while (a % b != 0) {
+	        int i = a; 
+	        int f = b; 
+	        a = b; 
+	        b = i % f; 
+	    } 
+	    return b; 
+	    }
+    public int compareTo(Rational obj) { 
+        if (this.floatValue() == obj.floatValue()) {
+            return 0; 
+        }
+        if (this.floatValue() > obj.floatValue()) { 
+            return 1; 
+        }
+        else { 
+            return -1; 
+        }
+    }
      public static void main (String[] args) { 
         Rational r = new Rational(2,3); 
         Rational s = new Rational(1,6);
         Rational t = new Rational(2,6);
-        Rational q = new Rational(2,8);
+        Rational q = new Rational(4,18);
         System.out.println(s.floatValue()); //should ouput 0.5
         System.out.println(t.gcd()); //should output 2
         System.out.println(r); //should output 2/3
@@ -92,5 +118,9 @@ public class Rational {
         System.out.println(t); // should output 2/6
         q.reduce(); 
         System.out.println(q); // should output 1/2
+        System.out.println(r.compareTo(s)); //should output 1
+    	System.out.println(gcdS(40,12)); //should output 4
+    	System.out.println(gcdS(52,6)); //should output 2
     }
 }
+
